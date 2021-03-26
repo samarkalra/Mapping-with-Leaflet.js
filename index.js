@@ -15,14 +15,21 @@ const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
 
 const api_url = "https://api.wheretheiss.at/v1/satellites/25544";
 
-const getIss = async () => {
+let firstTime = true;
+const getISS = async () => {
     const response = await fetch(api_url);
     const data = await response.json();
     const { latitude, longitude } = data;
 
-    document.getElementById('lat').textContent = latitude;
-    document.getElementById('long').textContent = longitude;
     marker.setLatLng([latitude, longitude]);
+
+    if (firstTime) {
+        mymap.setView([latitude, longitude], 4);
+        firstTime = false;
+    }
+
+    document.getElementById('lat').textContent = latitude.toFixed(2);
+    document.getElementById('long').textContent = longitude.toFixed(2);
 }
 
-getIss();
+setInterval(getISS, 1000);
