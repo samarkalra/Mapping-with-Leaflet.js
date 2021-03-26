@@ -6,6 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapping with Leaflet.js</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <style>
+        #issMap {
+            height: 500px;
+            width: 800px;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,7 +25,9 @@
     <p>latitude: <span id="lat"></span><br />
         longitude: <span id="long"></span>
     </p>
-
+    <div id="issMap"></div>
+    <a href="https://commons.wikimedia.org/wiki/File:International_Space_Station.svg">NASA</a>, Public domain, via
+    Wikimedia Commons
     <script src="./index.js"></script>
 </body>
 
